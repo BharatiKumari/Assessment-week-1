@@ -1,0 +1,9 @@
+public void update(int[] diff, int L, int R, int val) {
+    diff[L] += val;
+    if (R + 1 < diff.length) diff[R + 1] -= val;
+}
+
+public int[] getFinalArray(int[] diff) {
+    for (int i = 1; i < diff.length; i++) diff[i] += diff[i-1];
+    return diff;
+}
