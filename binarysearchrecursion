@@ -1,0 +1,8 @@
+public int binarySearchRecursive(int[] arr, int target, int low, int high) {
+    if (low > high) return -1;
+    int mid = low + (high - low) / 2;
+    if (arr[mid] == target) return mid;
+    return (arr[mid] < target) ? 
+        binarySearchRecursive(arr, target, mid + 1, high) : 
+        binarySearchRecursive(arr, target, low, mid - 1);
+}
